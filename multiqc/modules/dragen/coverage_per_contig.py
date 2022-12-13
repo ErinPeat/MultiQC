@@ -166,6 +166,6 @@ def parse_wgs_contig_mean_cov(f):
         )
     )
 
-    m = re.search(r"(.*).wgs_contig_mean_cov_?(tumor|normal)?.csv", f["fn"])
+    m = re.search(r"(.*)_contig_mean_cov?(tumor|normal)?.csv", f["fn"])
     sample, phenotype = m.group(1), m.group(2)
     return sample, {phenotype: [main_contig_perchrom_data, other_contig_perchrom_data]}
